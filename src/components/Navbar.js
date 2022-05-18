@@ -5,14 +5,17 @@ import "./Navbar.css"
 
 function Navbar(){
 
-    const {isLoggedIn, isLoading, user} = useContext(AuthContext);
+    const {isLoggedIn, isLoading, user, logOutUser} = useContext(AuthContext);
     return (
         <nav className="Navbar">
             <NavLink to="/">Home</NavLink> | 
             <NavLink to="/projects">Projects</NavLink> | 
             <NavLink to="/projects/create">New Project</NavLink> |||
             { isLoggedIn &&
-                <span>Welcome</span>
+                <>
+                    <span>Welcome</span> 
+                    <button onClick={logOutUser}>Logout</button>
+                </>
             }
 
             { !isLoggedIn &&

@@ -27,7 +27,7 @@ const deleteProject = (projectId)=>{
         const result = props.projects.map( (element) => {
             return (
                 <div key={element._id} className="project-summary box">
-                    <p>{element.title}</p>
+                    <h3>{element.title}</h3>
                     <NavLink to="/">More details</NavLink> |&nbsp;
                     <NavLink to={`/projects/${element._id}/edit`}>Edit</NavLink>
                     <a href="#" onClick={()=>{deleteProject(element._id)}}> Delete </a>
